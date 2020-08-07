@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media=screen>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+
+        <!-- jQuery library -->
+        <script type="text/javascript" src="assets/jquery-3.5.1.min.js"></script>
+
+        <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+
+        <!-- jsPDF library -->
+        <script src="assets/jspdf.min.js"></script>
+        <script src="assets/jspdf.plugin.addimage.js"></script>
+        <script src="assets/html2canvas.js"></script>
+        <script src="assets/html2canvas.min.js"></script>
+        <script src="node_modules/dom-to-image/src/dom-to-image.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <div id = "1">
+                <a class="navbar-brand " href="https://www.municipalidadlastalitas.gob.ar/">
+                    <img src="src/logo.png" id="logo">
+                </a>
+            </div>
+          </nav>
+        <div class="container-fluid">            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row titulo">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                            <a><h3>Declaracion Jurada de eximicion laboral</h1></a>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row empleado">
+                                    <div class="col-md-2" >
+                                        <label>Apellido y Nombre</label>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <input class="form-control" id= "apynom">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+                                
+
+                                    <div class="col-md-2">
+                                        <label>Documento</label>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="documento">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Domicilio</label>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="domicilio">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Telefono</label>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="telefono">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Codigo Postal</label>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="codigopostal">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Localidad</label>
+                                    </div>
+                                    
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="localidad">
+                                    </div>
+
+                                    <div class="col-md-2">
+                                    </div>
+
+                            </div>
+                            <div class="row empleador">
+                                <div class="col-md-2">
+                                    <label>Empleador</label>
+                                </div>
+                                
+                                <div class="col-md-8">
+                                    <input class="form-control" id="empleador">
+                                </div>
+
+                                <div class="col-md-2">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Domicilio del Empleador</label>
+                                </div>
+                                
+                                <div class="col-md-8">
+                                    <input class="form-control" id="domicilioempleador">
+                                </div>
+
+                                <div class="col-md-2">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Cuit del Empleador</label>
+                                </div>
+                                
+                                <div class="col-md-8">
+                                    <input class="form-control" id="cuitempleador">
+                                </div>
+
+                                <div class="col-md-2">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Horario Laboral</label>
+                                </div>
+                                
+                                <div class="col-md-8">
+                                    <input class="form-control" id="horariolaboral">
+                                </div>
+
+                                <div class="col-md-2">
+
+                                </div>
+                            </div>
+                            <div class="row botonera">
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-2">
+                                     
+                                    <button type="button" class="btn btn-primary" onclick="generar()" id="generar">
+                                        Aceptar
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                     
+                                    <button type="button" class="btn btn-danger">
+                                        Cancelar
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+        function generar() {
+
+            var apynom = document.getElementById("apynom").value;
+            var documento = document.getElementById("documento").value;
+            var domicilio = document.getElementById("domicilio").value;
+            var telefono = document.getElementById("telefono").value;
+            var codigopostal = document.getElementById("codigopostal").value;
+            var localidad = document.getElementById("localidad").value;
+
+            var empleador = document.getElementById("empleador").value;
+            var domicilioempleador = document.getElementById("domicilioempleador").value;
+            var cuitempleador = document.getElementById("cuitempleador").value;
+            var horariolaboral = document.getElementById("horariolaboral").value;
+
+            var doc = new jsPDF();
+            base65 = getBase64();
+
+            //exportPdf(base65);
+            //var imgData = base65;
+
+            var img = new Image(),
+                canvas = document.createElement("canvas"),
+                ctx = canvas.getContext("2d");
+
+            img.src = 'logo.jpeg';
+
+            ctx.drawImage(document.getElementById("logo"), 0, 0 );
+            /*var imgData = canvas.toDataURL('image/jpeg');
+            console.log(imgData)*/
+            var doc = new jsPDF();
+            doc.setFontSize(12);
+            //doc.addImage(base65, 'JPEG', 15, 40, 180, 180);
+            // doc.addPage();
+            doc.text('MUNICIPALIDAD LAS TALITAS', 70, 20)
+            doc.text('DECLARACION JURADA DE EXIMISION LABORAL TEMPORAL', 40, 30)
+            doc.text('APELLIDO Y NOMBRE:  ' + apynom, 10, 50)
+            doc.text('DNI Nº:  ' + documento, 10, 60)
+            doc.text('DOMICILIO:  ' + domicilio, 10, 70)
+            doc.text('TEL.:  '+telefono, 10, 80)
+            doc.text('CP:  '+codigopostal, 10, 90)
+            doc.text('LOCALIDAD:  '+localidad, 10, 100)
+
+
+            doc.text('CIUDAD DE LAS TALITAS', 10, 120)
+            doc.setFontSize(10)
+            doc.text('  EXPRESA QUE, En virtud de las restricciones de circulación dispuestas mediante Decreto',10,130)
+            doc.text('Municipal Nº 0513/2.020 emitido en fecha 03 de Agosto de 2.020, en su Art. 2º (SIC . . .', 10, 135)
+            
+
+            var parrafocomplicado = "RECOMENDAR a las personas residentes en nuestra Ciudad, la permanencia en sus hogares,"
+            var parrafocomplicado1= "absteniéndose de concurrir a sus lugares de trabajo, evitando el desplazamiento por rutas, vías"
+            var parrafocomplicado2= "y espacios públicos, salvo quienes cumplan tareas esenciales. Permitiéndose solo el desplazamiento"
+            var parrafocomplicado3= "mínimo e indispensable para aprovisionamiento de alimentos, medicamentos y artículos de"
+            var parrafocomplicado4= "primera necesidad"
+            doc.setFontSize(12)
+            doc.fromHTML('<b><i>"'+parrafocomplicado+'</i></b>', 10, 134)
+            doc.fromHTML('<b><i>'+parrafocomplicado1+'</i></b>', 10, 139)
+            doc.fromHTML('<b><i>'+parrafocomplicado2+'</i></b>', 10, 144)
+            doc.fromHTML('<b><i>'+parrafocomplicado3+'</i></b>', 10, 149)
+            doc.fromHTML('<b><i>'+parrafocomplicado4+'"</i></b>', 10,154)
+            doc.setFontSize(10)
+            doc.text(' , se emite la presente Constancia a los efectos de ser presentada el Empleador ', 45, 160)
+            doc.text('correspondiente. ', 10, 165)
+            doc.setFontSize(11)
+            doc.text('EMPLEADOR:  ' + empleador, 10, 175)
+            doc.text('DOMICILIO DEL EMPLEADOR:  '+ domicilioempleador, 10, 185)
+
+            doc.text('HORARIO LABORAL:  '+ horariolaboral, 10, 195)
+        
+            doc.save('DeclaracionJuradaTalitas'+apynom+'.pdf');
+            
+        }
+
+        function getBase64() {
+            var out = '';
+            $.ajax({
+                url: 'safa.php',
+                async: false,
+                dataTye: 'text',
+                success: function(data) {
+                    out = data;
+                }
+            });
+            return out;
+        }
+
+        function debugBase64(base64URL){
+            
+            win.close();
+        }
+
+        function exportPdf(base65) {
+                var exported = [];
+                var cantPag = 0;
+                const divs = document.getElementsByClassName("image")
+                
+                domtoimage
+                .toJpeg(divs,{ quality: 1 })
+                .then(dataUrl => {
+                    var doc = new jsPDF("p", "px", "a4");
+                    doc.addImage(base65, "JPEG", 0, 0, null, null);
+                    doc.addPage();
+                    doc.save("Pasajes");
+                    this.loader.dismiss();                    
+                })
+                .catch(function(error) {
+                    //this.loading.dismiss();
+                    console.error(
+                    "Error, Convirtiendo a imagen y agregando al array!",
+                    error
+                    );
+                });
+                //exported.push(element.cli_documento);
+            
+
+/*
+         function exportPdf() {
+                var exported = [];
+                var cantPag = 0;
+                this.loader = this.loadingCtrl.create({
+                content: "Descargando Pasajes en PDF ..."
+                });
+                this.loader.present();
+                this.resPassage.forEach(element => {
+                if (
+                    exported.filter(item => {
+                    return item == element.cli_documento;
+                    })[0] == element.cli_documento
+                ) {
+                    return;
+                }
+                const divs = document.getElementsByClassName(element.cli_documento);
+                cantPag += divs.length;
+
+                for (var i = 0; i < divs.length; ++i) {
+                    domtoimage
+                    .toJpeg(divs[i], { quality: 1 })
+                    .then(dataUrl => {
+                        this.response.push(dataUrl);
+                        if (cantPag == this.response.length) {
+                        var doc = new jsPDF("p", "px", "a4");
+                        for (var pos = 0; pos < this.response.length; pos++) {
+                            doc.addImage(this.response[pos], "JPEG", 0, 0, null, null);
+                            if (pos < this.response.length - 1) {
+                            doc.addPage();
+                            }
+                        }
+                        doc.save("Pasajes");
+                        this.loader.dismiss();
+                        }
+                    })
+                    .catch(function(error) {
+                        //this.loading.dismiss();
+                        console.error(
+                        "Error, Convirtiendo a imagen y agregando al array!",
+                        error
+                        );
+                    });
+                }
+                exported.push(element.cli_documento);
+                });*/
+  }
+    </script>
+</html>
