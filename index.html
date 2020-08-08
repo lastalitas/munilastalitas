@@ -27,12 +27,10 @@
     </head>
 
     <body>
-        <nav class="navbar fixed-top navbar-light bg-light">
-            <div id = "1">
-                <a class="navbar-brand " href="https://www.municipalidadlastalitas.gob.ar/">
-                    <img src="src/logo.png" id="logo">
+        <nav class="navbar fixed-top navbar-light bg-light logo">
+                <a class="navbar-brand logo" href="https://www.municipalidadlastalitas.gob.ar/">
+                    <img class="logotalitense" src="src/logo.png" >
                 </a>
-            </div>
           </nav>
         <div class="container-fluid">            
             <div class="row">
@@ -178,7 +176,7 @@
                                 </div>
                                 <div class="col-md-2">
                                      
-                                    <button type="button" class="btn btn-danger">
+                                    <button type="button" class="btn btn-danger" onclick="borrarTodo()">
                                         Cancelar
                                     </button>
                                 </div>
@@ -194,6 +192,21 @@
         </div>
     </body>
     <script>
+        function borrarTodo(){
+            document.getElementById("apynom").value = "";
+
+            
+            document.getElementById("documento").value = "";
+            document.getElementById("domicilio").value = "";
+            document.getElementById("telefono").value = "";
+            document.getElementById("codigopostal").value = "";
+            document.getElementById("localidad").value = "";
+
+            document.getElementById("empleador").value = "";
+            document.getElementById("domicilioempleador").value = "";
+            document.getElementById("cuitempleador").value = "";
+            document.getElementById("horariolaboral").value = "";
+        }
 
         function generar() {
 
@@ -215,13 +228,13 @@
             //exportPdf(base65);
             //var imgData = base65;
 
-            var img = new Image(),
+            /*var img = new Image(),
                 canvas = document.createElement("canvas"),
                 ctx = canvas.getContext("2d");
 
             img.src = 'logo.jpeg';
 
-            ctx.drawImage(document.getElementById("logo"), 0, 0 );
+            ctx.drawImage(document.getElementById("logo"), 0, 0 );*/
             /*var imgData = canvas.toDataURL('image/jpeg');
             console.log(imgData)*/
             var doc = new jsPDF();
@@ -243,7 +256,7 @@
             doc.text('  EXPRESA QUE, En virtud de las restricciones de circulación dispuestas mediante Decreto',10,130)
             doc.text('Municipal Nº 0513/2.020 emitido en fecha 03 de Agosto de 2.020, en su Art. 2º (SIC . . .', 10, 135)
             
-
+            apynom.value = "";
             var parrafocomplicado = "RECOMENDAR a las personas residentes en nuestra Ciudad, la permanencia en sus hogares,"
             var parrafocomplicado1= "absteniéndose de concurrir a sus lugares de trabajo, evitando el desplazamiento por rutas, vías"
             var parrafocomplicado2= "y espacios públicos, salvo quienes cumplan tareas esenciales. Permitiéndose solo el desplazamiento"
@@ -265,7 +278,39 @@
             doc.text('HORARIO LABORAL:  '+ horariolaboral, 10, 195)
         
             doc.save('DeclaracionJuradaTalitas'+apynom+'.pdf');
+
+            var blob = new Blob(["Welcome to Websparrow.org."],
+                { type: "text/plain;charset=utf-8" });
             
+            var a = document.createElement("blob");
+            var hoy = new Date();
+            var fecha = hoy.getDate() +'-'+ (hoy.getMonth() + 1) + hoy.getFullYear;
+            var hora = hoy.getHours()+':'+hoy.getMinutes()+':'+hoy.getSeconds()+':'+hoy.getMilliseconds();
+            a.href="data:application/json;charset=utf-8,"+apynom + ' ' + documento + ' ' + empleador + ' '+fecha+' '+hora;
+            a.download = "blob.txt"
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+            console.log("savelog");
+            saveLog(apynom,documento,empleador,fecha,hora)
+            borrarTodo();   
+            
+        }
+
+        function saveLog(apynom,documento,empresa,fecha,hora){
+            var out = '';
+            $.ajax({
+                url: 'safatxt.php',
+                async: false,
+                data: apynom,
+                dataTye: 'text',
+                success: function(data) {
+                    out = data;
+                    console.log(data);
+                }
+            });
+            console.log("save log finalizo");
+            return out;
         }
 
         function getBase64() {

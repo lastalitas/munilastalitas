@@ -23,6 +23,10 @@ label{
 }
 
 .logotalitense{
-    width: 140px;
-    align-content: center;
+    width: 100px;
 }
+
+.logo {
+    display: block;
+    padding-left: 44%;
+  }
