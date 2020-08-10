@@ -1,0 +1,23 @@
+{
+  "name": "talitas",
+  "version": "1.0.0",
+  "description": "paginatalitas",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "talitas"
+  ],
+  "author": "mauricio brandan",
+  "license": "ISC",
+  "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "domino": "^2.1.6",
+    "fs": "0.0.1-security",
+    "html-pdf": "^2.2.0",
+    "pdfkit": "^0.11.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {}
+}
